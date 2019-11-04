@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Football League</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="league_badge">League Badge</string>
+    <string name="last_match">Last Match</string>
+    <string name="next_match">Next Match</string>
+    <string name="team_badge">Team Badge</string>
+    <string name="empty_score">- : -</string>
+    <string name="empty_value">-</string>
+    <string name="score">Score</string>
+    <string name="shots">Shots</string>
+    <string name="yellow_card">Yellow Card</string>
+    <string name="red_card">Red Card</string>
+</resources>
