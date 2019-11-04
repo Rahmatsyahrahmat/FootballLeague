@@ -1,10 +1,7 @@
 package com.rahmatsyah.footballleague.service.api
 
 import com.rahmatsyah.footballleague.BuildConfig
-import com.rahmatsyah.footballleague.model.LeagueDetailResponse
-import com.rahmatsyah.footballleague.model.LeagueResponse
-import com.rahmatsyah.footballleague.model.MatchResponse
-import com.rahmatsyah.footballleague.model.TeamResponse
+import com.rahmatsyah.footballleague.model.*
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -37,5 +34,7 @@ object ApiService{
     fun getTeamById(id: String):Call<TeamResponse> = service.getTeamById(id)
 
     fun getDetailMatch(id: String): Call<MatchResponse> = service.getDetailMatch(id)
+
+    fun searchMatch(e:String): Call<SearchResponse> = service.searchMatch(e)
 
 }

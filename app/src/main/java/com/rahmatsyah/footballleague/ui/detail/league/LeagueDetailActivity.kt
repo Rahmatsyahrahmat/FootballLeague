@@ -1,8 +1,12 @@
 package com.rahmatsyah.footballleague.ui.detail.league
 
+import android.app.SearchManager
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayout
@@ -20,7 +24,6 @@ class LeagueDetailActivity : AppCompatActivity(), LeagueDetailView.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league_detail)
-
 
         leagueDetailPresenter = LeagueDetailPresenter(this)
         intent.extras?.getString("leagueIds")?.let { leagueDetailPresenter.requestLeagueDetail(it) }
@@ -65,4 +68,17 @@ class LeagueDetailActivity : AppCompatActivity(), LeagueDetailView.View {
     override fun failureLoadData(msg: String) {
         Toast.makeText(this,msg,Toast.LENGTH_LONG).show()
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.search_menu,menu)
+
+        val searchManager:SearchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+
+        (menu?.findItem(R.id.action_search)?.actionView as SearchView).apply {
+            setSearchableInfo(searchManager.getSearchableInfo(componentName))
+        }
+
+        return true
+    }
+
 }

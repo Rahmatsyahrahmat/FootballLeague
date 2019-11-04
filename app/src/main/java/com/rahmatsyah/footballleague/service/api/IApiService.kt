@@ -1,9 +1,6 @@
 package com.rahmatsyah.footballleague.service.api
 
-import com.rahmatsyah.footballleague.model.LeagueDetailResponse
-import com.rahmatsyah.footballleague.model.LeagueResponse
-import com.rahmatsyah.footballleague.model.MatchResponse
-import com.rahmatsyah.footballleague.model.TeamResponse
+import com.rahmatsyah.footballleague.model.*
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -30,5 +27,8 @@ interface IApiService {
 
     @GET("lookupevent.php")
     fun getDetailMatch(@Query("id") id:String): Call<MatchResponse>
+
+    @GET("searchevents.php")
+    fun searchMatch(@Query("e") e:String): Call<SearchResponse>
 
 }

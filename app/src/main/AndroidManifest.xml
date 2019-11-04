@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.rahmatsyah.footballleague">
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,8 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".ui.detail.match.MatchDetailActivity"/>
-        <activity android:name=".ui.detail.league.LeagueDetailActivity" />
+        <activity android:name=".ui.detail.match.MatchDetailActivity" />
+        <activity android:name=".ui.detail.league.LeagueDetailActivity"
+            android:launchMode="singleTop">
+            <meta-data android:name="android.app.default_searchable"
+                android:value=".ui.search.SearchResultActivity" />
+        </activity>
+        <activity android:name=".ui.search.SearchResultActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+
+        </activity>
         <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

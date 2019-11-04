@@ -13,4 +13,6 @@
     <string name="shots">Shots</string>
     <string name="yellow_card">Yellow Card</string>
     <string name="red_card">Red Card</string>
+    <string name="search">Search</string>
+    <string name="no_match">There is no match available</string>
 </resources>
