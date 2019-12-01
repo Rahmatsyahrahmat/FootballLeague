@@ -27,14 +27,23 @@ class LastMatchFragment : Fragment(), MatchView.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
         val lastMatchPresenter =
-            MatchPresenter(this)
-        arguments?.getString("leagueIds")?.let { lastMatchPresenter.requestLastMatch(it) }
+            context?.let { MatchPresenter(it,this) }
+
+        val leagueIds = arguments?.getString("leagueIds")
+        if (leagueIds!=null){
+            leagueIds.let { lastMatchPresenter?.requestLastMatch(it) }
+        }else{
+            lastMatchPresenter?.requestLastMatch()
+        }
+
     }
 
-    override fun showMatch(matchs: List<Match>) {
-        listLastMatch.layoutManager = LinearLayoutManager(context)
-        listLastMatch.adapter = context?.let { MatchAdapter(it,matchs) }
+    override fun showMatch(matches: List<Match>) {
+        listLastMatch?.layoutManager = LinearLayoutManager(context)
+        listLastMatch?.adapter = context?.let { MatchAdapter(it,matches) }
     }
 
     override fun failureLoadMatch() {

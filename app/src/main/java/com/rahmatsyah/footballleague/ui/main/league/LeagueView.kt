@@ -1,8 +1,8 @@
-package com.rahmatsyah.footballleague.ui.main
+package com.rahmatsyah.footballleague.ui.main.league
 
 import com.rahmatsyah.footballleague.model.LeagueDetail
 
-interface MainView {
+interface LeagueView {
 
     interface Presenter{
         fun requestLeagues()

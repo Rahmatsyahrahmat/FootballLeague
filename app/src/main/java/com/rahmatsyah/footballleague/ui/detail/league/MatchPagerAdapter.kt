@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.rahmatsyah.footballleague.ui.detail.league.match.last.LastMatchFragment
 import com.rahmatsyah.footballleague.ui.detail.league.match.next.NextMatchFragment
 
-class MatchPagerAdapter(fm:FragmentManager,leagueIds:String): FragmentPagerAdapter(fm) {
+class MatchPagerAdapter(fm:FragmentManager,leagueIds:String?): FragmentPagerAdapter(fm) {
 
     private val pages: List<Fragment> = listOf(
         LastMatchFragment(),
@@ -16,9 +16,11 @@ class MatchPagerAdapter(fm:FragmentManager,leagueIds:String): FragmentPagerAdapt
 
     init {
         val bundle = Bundle()
-        bundle.putString("leagueIds",leagueIds)
-        pages[0].arguments = bundle
-        pages[1].arguments = bundle
+        if (leagueIds!=null) {
+            bundle.putString("leagueIds", leagueIds)
+            pages[0].arguments = bundle
+            pages[1].arguments = bundle
+        }
     }
 
     override fun getItem(position: Int): Fragment = pages[position]

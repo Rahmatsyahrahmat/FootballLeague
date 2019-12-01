@@ -1,4 +1,4 @@
-package com.rahmatsyah.footballleague.ui.main
+package com.rahmatsyah.footballleague.ui.main.league
 
 import android.content.Context
 import android.view.LayoutInflater

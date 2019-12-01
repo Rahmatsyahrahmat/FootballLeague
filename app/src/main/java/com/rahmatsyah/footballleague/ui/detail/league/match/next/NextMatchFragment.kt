@@ -28,13 +28,19 @@ class NextMatchFragment : Fragment(), MatchView.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val nextMatchPresenter =
-            MatchPresenter(this)
-        arguments?.getString("leagueIds")?.let { nextMatchPresenter.requestNextMatch(it) }
+            context?.let { MatchPresenter(it,this) }
+
+        val leagueIds = arguments?.getString("leagueIds")
+        if (leagueIds!=null){
+            leagueIds.let { nextMatchPresenter?.requestNextMatch(it) }
+        }else{
+            nextMatchPresenter?.requestNextMatch()
+        }
     }
 
-    override fun showMatch(matchs: List<Match>) {
-        listNextMatch.layoutManager = LinearLayoutManager(context)
-        listNextMatch.adapter = context?.let { MatchAdapter(it,matchs) }
+    override fun showMatch(matches: List<Match>) {
+        listNextMatch?.layoutManager = LinearLayoutManager(context)
+        listNextMatch?.adapter = context?.let { MatchAdapter(it,matches) }
     }
 
     override fun failureLoadMatch() {

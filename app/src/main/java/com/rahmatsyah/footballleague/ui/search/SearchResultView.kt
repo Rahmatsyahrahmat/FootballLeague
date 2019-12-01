@@ -9,6 +9,6 @@ interface SearchResultView {
         fun noMatch()
     }
     interface Presenter{
-        fun requestMatch(query:String)
+        fun requestMatch(query:String?)
     }
 }

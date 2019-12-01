@@ -10,5 +10,7 @@ interface MatchView {
     interface Presenter{
         fun requestLastMatch(id:String)
         fun requestNextMatch(id:String)
+        fun requestLastMatch()
+        fun requestNextMatch()
     }
 }

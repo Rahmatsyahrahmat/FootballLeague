@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_league">
+
+    <fragment
+        android:id="@+id/navigation_league"
+        android:name="com.rahmatsyah.footballleague.ui.main.league.LeagueFragment"
+        android:label="@string/league"
+        tools:layout="@layout/fragment_league" />
+
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.rahmatsyah.footballleague.ui.main.favorite.FavoriteMatchFragment"
+        android:label="@string/favorite"
+        tools:layout="@layout/fragment_favorite_match" />
+
+</navigation>

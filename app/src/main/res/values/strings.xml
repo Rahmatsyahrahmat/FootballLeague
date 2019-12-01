@@ -15,4 +15,9 @@
     <string name="red_card">Red Card</string>
     <string name="search">Search</string>
     <string name="no_match">There is no match available</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="league">League</string>
+    <string name="favorite">Favorite</string>
 </resources>

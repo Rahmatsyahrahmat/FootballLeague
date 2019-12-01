@@ -10,6 +10,9 @@ data class Match(
     @SerializedName("strEvent")
     val title:String,
 
+    @SerializedName("strSport")
+    val sport:String,
+
     @SerializedName("dateEvent")
     val date:String,
 
@@ -43,4 +46,37 @@ data class Match(
     @SerializedName("strAwayRedCards")
     val awayRedCard:String
 
-)
+){
+    companion object{
+
+        const val table_name:String = "Match"
+
+        const val id:String = "idEvent"
+
+        const val title:String = "strEvent"
+
+        const val sport:String = "strSport"
+
+        const val date:String = "dateEvent"
+
+        const val homeScore:String = "intHomeScore"
+
+        const val awayScore:String = "intAwayScore"
+
+        const val idHome:String = "idHomeTeam"
+
+        const val idAway:String = "idAwayTeam"
+
+        const val homeShot:String = "intHomeShots"
+
+        const val awayShot:String = "intAwayShots"
+
+        const val homeYellowCard:String = "strHomeYellowCards"
+
+        const val awayYellowCard:String = "strAwayYellowCards"
+
+        const val homeRedCard:String = "strHomeRedCards"
+
+        const val awayRedCard:String = "strAwayRedCards"
+    }
+}

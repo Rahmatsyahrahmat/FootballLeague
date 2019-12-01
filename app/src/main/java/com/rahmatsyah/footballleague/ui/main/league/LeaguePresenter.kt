@@ -1,12 +1,14 @@
-package com.rahmatsyah.footballleague.ui.main
+package com.rahmatsyah.footballleague.ui.main.league
 
-import com.rahmatsyah.footballleague.model.*
+import com.rahmatsyah.footballleague.model.League
+import com.rahmatsyah.footballleague.model.LeagueDetailResponse
+import com.rahmatsyah.footballleague.model.LeagueResponse
 import com.rahmatsyah.footballleague.service.api.ApiService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainPresenter(val view:MainView.View) : MainView.Presenter {
+class LeaguePresenter(val view:LeagueView.View) : LeagueView.Presenter {
 
 
     override fun requestLeagues() {
