@@ -48,6 +48,9 @@ class FavoriteMatchFragment : Fragment(){
 
     }
 
-
+    override fun onResume() {
+        super.onResume()
+        vpFavorite?.adapter = MatchPagerAdapter(childFragmentManager, null)
+    }
 
 }
